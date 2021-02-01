@@ -8,9 +8,32 @@ const music = ['Hiphop', 'R&B', 'Rock'];
 const workingSpot = ['Home', 'Office'];
 
 // GET Request
-const teams = fetch(`${url}/squads/2/teams/6/members`)
+const teams = fetch(`${url}/squads/2/teams/6/members/5`)
 	.then((response) => response.json())
-	.then((data) => console.log('fetch', data));
+	.then((data) => {
+		console.log('data: ', data);
+		const mugshot = data.mugshot;
+		const name = data.name;
+		const surname = data.surname;
+		const githubHandle = data.githubHandle;
+		const sport = data.other.sport;
+		const teamId = data.teamId;
+
+		document.title = `Visit card of ${name + ' ' + surname}`;
+
+		let img = document.getElementById('mugshot');
+		img.src = mugshot;
+
+		let header = document.getElementById('name');
+		header.innerHTML = name + ' ' + surname;
+
+		let team = document.getElementById('team');
+		team.innerHTML = `Team: Squid ${teamId}`;
+
+		let handle = document.getElementById('handle');
+		handle.href = githubHandle;
+		handle.innerHTML = 'Github Handle';
+	});
 
 // Put data
 const putData = {
@@ -42,18 +65,3 @@ async function postData(url = `${path}`, data = { putData }) {
 postData(`${url}/squads/2/teams/6/members/5`, putData).then((data) => {
 	console.log('put', data);
 });
-
-// Render data to html
-
-let header = document.getElementById('name');
-header.innerHTML = putData.name + ' ' + putData.surname;
-console.log(header);
-
-let team = document.getElementById('team');
-team.innerHTML = `Team: Squid ${putData.teamId}`;
-console.log(team);
-
-let handle = document.getElementById('handle');
-handle.href = 'https://github.com/benl95';
-handle.innerHTML = 'Github Handle';
-console.log(handle);
