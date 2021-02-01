@@ -1,14 +1,104 @@
-:root {
-  --primary:#FFF;
-  --secondary:#000;
-}
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Remove padding and margin */
 
 * {
-  box-sizing:border-box;
-  scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-html {
-  background: var(--secondary);
-  color: var(--primary);
+/* CSS variables */
+
+:root {
+	--icon-size: 40px;
+	--card-width: 300px;
+	--card-height: 450px;
+	--button-container-height: 90px;
+	--black-color: #191919;
+	--white-color: #ffffff;
+	--button-padding: 10px 15px 10px 15px;
+}
+
+/* Card styling */
+
+.card-container {
+	margin: 3em 3em 3em 3em;
+	display: flex;
+	flex-direction: column;
+	width: var(--card-width);
+	height: var(--card-height);
+	border-radius: 30px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card-container:hover {
+	transform: scale(1.2);
+	transition: 0.3s ease-out;
+	transition-delay: 0.4s;
+}
+
+.image-container {
+	width: inherit;
+	height: 250px;
+}
+
+.image-container img {
+	width: inherit;
+	height: 250px;
+}
+
+.card-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--black-color);
+	height: 450px;
+	width: inherit;
+	align-self: flex-end;
+}
+
+.personal-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: var(--button-container-height);
+	padding: var(--button-padding);
+}
+
+.hobby-container {
+	padding-top: 60px;
+	padding: var(--button-padding);
+}
+
+.hobby-container ul {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--white-color);
+	list-style-position: inside;
+}
+
+.hobby-container li:nth-child(1) {
+	list-style-type: none;
+}
+
+h1 {
+	font-size: 20px;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+}
+
+p {
+	padding-bottom: 10px;
 }
