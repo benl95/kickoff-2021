@@ -47,12 +47,12 @@ main {
 
 .image-container {
 	width: inherit;
-	height: 250px;
+	height: 270px;
 }
 
 .image-container img {
 	width: inherit;
-	height: 250px;
+	height: 270px;
 }
 
 .card-info-container {
@@ -60,9 +60,10 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	background-color: var(--black-color);
-	height: 450px;
+	height: 470px;
 	width: inherit;
 	align-self: flex-end;
+	padding-top: 2rem;
 }
 
 .personal-info-container {
@@ -86,6 +87,7 @@ main {
 	font-size: 16px;
 	color: var(--white-color);
 	list-style-position: inside;
+	padding-bottom: 1rem;
 }
 
 .hobby-container li:nth-child(1) {
